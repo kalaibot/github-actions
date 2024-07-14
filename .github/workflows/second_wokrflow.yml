@@ -1,0 +1,23 @@
+name: second workflow
+on:
+    push:
+        branches: 
+            - main
+    workflow_dispatch: 
+jobs:
+    second_workflow:
+        name: secondworkflow
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo
+              run: | 
+                echo "hello from ${{github.actor}}"
+                echo "hello from ${{github.action_repository}}"
+              shell: bash
+            - name: checkout
+              uses: actions/checkout@v4.1.0
+            - run: tree
+
+    
+
+        
