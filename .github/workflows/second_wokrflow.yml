@@ -16,7 +16,12 @@ jobs:
               shell: bash
             - name: checkout
               uses: actions/checkout@v4.1.0
+            - name: Hello action
+              uses: wxdlong/hello-action@v7
+              with:
+                  who-to-greet: kalai
             - run: tree
+            
 
     
 
