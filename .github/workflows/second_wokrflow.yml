@@ -13,6 +13,7 @@ jobs:
               run: | 
                 echo "hello from ${{github.actor}}"
                 echo "hello from ${{github.action_repository}}"
+                echo "hello from vars: ${{vars.MY_VAR}}"
               shell: bash
             - name: checkout
               uses: actions/checkout@v4.1.0
