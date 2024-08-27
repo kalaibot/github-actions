@@ -1,0 +1,17 @@
+name: Build Docker Image
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on push to the main branch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      # Step 2: Run the shell command
+      - name: run shell command
+        run: ls -lrta
