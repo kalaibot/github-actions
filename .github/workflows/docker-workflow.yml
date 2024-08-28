@@ -21,5 +21,6 @@ jobs:
         with:
           username: kalaipm
           password: ${{ secrets.DOCKER_PASSWORD }}
+      
       - name: docker push
         run: docker push kalaipm/telnet_github_actions
