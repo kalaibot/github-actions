@@ -10,9 +10,9 @@ jobs:
     steps:
       # Step 1: Checkout the repository
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.1.7
         
       # Step 2: Run the shell command
       - name: run shell command
         run: |
-          cd .github/ ; ls -lrta
+          python -v; pip freeze
