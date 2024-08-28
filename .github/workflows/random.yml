@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+name: random number generator
+
+jobs:
+  random-number-generator:
+    runs-on: ubuntu-latest
+    outputs:
+      number: ${{ steps.generate-number.outputs.number }}
+    steps:
+      - id: generate-number
+        run: echo "number=$(echo $RANDOM)" >> "$GITHUB_OUTPUT"
