@@ -3,6 +3,8 @@ name: Node.js CI - with no cache
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
 
 jobs:
   build:
