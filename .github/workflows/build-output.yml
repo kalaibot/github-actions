@@ -1,0 +1,20 @@
+name: build-output-workflow
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: number-generator
+        id: test
+        run: |
+          echo "test_number=$(echo $RANDOM)" >> "$GITHUB_OUTPUT"
+
+      - name: print the number
+        run: |
+          echo "random generator number is ${{ steps.test.ouptuts.test_number }}"
+      
