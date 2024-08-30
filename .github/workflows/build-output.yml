@@ -9,11 +9,14 @@ jobs:
   build-job:
     runs-on: ubuntu-latest
     steps:
-      - id: test
-        run: |
-          echo "test_number=$(echo $RANDOM)" >> "$GITHUB_OUTPUT"
+      - id: generate-number
+        run: echo "number=$(echo $RANDOM)" >> "$GITHUB_OUTPUT"
+      - id: use-number
+        run: echo "The number is ${{ steps.generate-number.outputs.number }}"
+    # steps:
+    #   - id: test
+    #     run: echo "test_number=$(echo $RANDOM)" >> "$GITHUB_OUTPUT"
 
-      - name: print the number
-        run: |
-          echo "random generator number is ${{ steps.test.ouptuts.test_number }}"
+    #   - name: print the number
+    #     run: echo "random generator number is ${{ steps.test.ouptuts.test_number }}"
       
