@@ -9,8 +9,7 @@ jobs:
   build-job:
     runs-on: ubuntu-latest
     steps:
-      - name: number-generator
-        id: test
+      - id: test
         run: |
           echo "test_number=$(echo $RANDOM)" >> "$GITHUB_OUTPUT"
 
