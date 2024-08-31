@@ -26,9 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: failure
-        run: exit 0
+        run: exit 1
       - name: test failure
-        run: echo 
+        run: echo 'kalai'
         if: ${{ failure() }}
         
   
