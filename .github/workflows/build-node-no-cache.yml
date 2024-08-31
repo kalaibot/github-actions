@@ -1,9 +1,9 @@
 name: Python CI with Cache
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   pull_request:
     branches:
       - main
