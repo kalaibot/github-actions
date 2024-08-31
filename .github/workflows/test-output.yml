@@ -12,6 +12,8 @@ jobs:
       - id: assign
         run: |
           echo "num=12345" >> "$GITHUB_OUTPUT"
+      - name: The job has succeeded
+        if: ${{ success() }}
   test:
     runs-on: ubuntu-latest
     needs: build
@@ -19,4 +21,12 @@ jobs:
       - name: Fetch the variable value
         run: |
           echo "value of the var is ${{ needs.build.outputs.num }}"
+  fail:
+    runs-on: ubuntu-latest
+    steps:
+      - name: failure
+        run: exit 1
+      - name: test failure
+        if: ${{ failure() }}
+        
   
