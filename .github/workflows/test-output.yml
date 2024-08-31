@@ -13,8 +13,8 @@ jobs:
         run: |
           echo "num=12345" >> "$GITHUB_OUTPUT"
       - name: The job has succeeded
-        run: echo 
-        if: ${{ success() }}
+        run: echo 'test the job'
+        if: ${{ failure() }}
   test:
     runs-on: ubuntu-latest
     needs: build
