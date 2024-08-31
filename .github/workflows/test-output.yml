@@ -1,0 +1,17 @@
+name: test-output
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - id: assign
+        run: |
+          echo "num=1234" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch the variable value
+        run: |
+          echo "value of the var is ${{ steps.assign.outputs.num }}"
+  
