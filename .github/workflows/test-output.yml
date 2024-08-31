@@ -6,12 +6,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      num: ${{ steps.assign.outputs.num }}
     steps:
       - id: assign
         run: |
-          echo "num=1234" >> "$GITHUB_OUTPUT"
-
+          echo "num=12345" >> "$GITHUB_OUTPUT"
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Fetch the variable value
         run: |
-          echo "value of the var is ${{ steps.assign.outputs.num }}"
+          echo "value of the var is ${{ needs.build.outputs.num }}"
   
